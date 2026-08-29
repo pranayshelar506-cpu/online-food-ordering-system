@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Musafir Café - Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                Musafir<span>Café</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="menu.html">Menu</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+            </ul>
+
+            <div class="nav-actions">
+
+                <button class="cart-btn" onclick="openCart()">
+                    Cart <span id="cartCount">0</span>
+                </button>
+
+                <button class="order-btn" onclick="goToMenu()">
+                    Order Now
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-hero">
+
+        <div>
+
+            <p class="welcome">
+                OUR SPECIALS
+            </p>
+
+            <h1>
+                Popular Coffee
+            </h1>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu-section">
+
+        <div class="section-heading">
+
+            <p>
+                FRESHLY BREWED
+            </p>
+
+            <h2>
+                Choose Your Favorite
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="menu-container">
+
+
+            <!-- LATTE -->
+
+            <div class="coffee-card">
+
+                <div class="coffee-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1000&q=95"
+                        alt="Caffe Latte">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Caffe Latte
+                    </h3>
+
+                    <p>
+                        Rich espresso blended with smooth steamed milk.
+                    </p>
+
+                    <div class="price">
+
+                        <span>
+                            ₹180
+                        </span>
+
+                        <button
+                            onclick="addCoffee('Caffe Latte', 180)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAPPUCCINO -->
+
+            <div class="coffee-card">
+
+                <div class="coffee-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=1000&q=95"
+                        alt="Cappuccino">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Cappuccino
+                    </h3>
+
+                    <p>
+                        Bold espresso topped with creamy milk foam.
+                    </p>
+
+                    <div class="price">
+
+                        <span>
+                            ₹200
+                        </span>
+
+                        <button
+                            onclick="addCoffee('Cappuccino', 200)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AMERICANO -->
+
+            <div class="coffee-card">
+
+                <div class="coffee-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=95"
+                        alt="Americano">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Americano
+                    </h3>
+
+                    <p>
+                        Classic espresso combined with hot water.
+                    </p>
+
+                    <div class="price">
+
+                        <span>
+                            ₹150
+                        </span>
+
+                        <button
+                            onclick="addCoffee('Americano', 150)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOCHA -->
+
+            <div class="coffee-card">
+
+                <div class="coffee-image">
+
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/056/489/974/small/rich-mocha-coffee-with-whipped-cream-and-chocolate-drizzle-tray-photo.jpg"
+                        alt="Chocolate Mocha">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Chocolate Mocha
+                    </h3>
+
+                    <p>
+                        Espresso, chocolate and creamy steamed milk.
+                    </p>
+
+                    <div class="price">
+
+                        <span>
+                            ₹220
+                        </span>
+
+                        <button
+                            onclick="addCoffee('Chocolate Mocha', 220)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART ================= -->
+
+    <div id="cartModal" class="modal">
+
+        <div class="modal-content cart-modal">
+
+            <button class="close-btn" onclick="closeCart()">
+                ×
+            </button>
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-total">
+
+                <strong>
+                    Total:
+                </strong>
+
+                <span id="cartTotal">
+                    ₹0
+                </span>
+
+            </div>
+
+            <button
+                class="primary-btn full-btn"
+                onclick="goToCheckout()">
+
+                Proceed to Payment
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    Musafir<span>Café</span>
+                </div>
+
+                <p>
+                    Freshly brewed happiness, one cup at a time.
+                </p>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 Musafir Café Coffee.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
