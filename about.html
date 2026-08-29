@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Musafir Café - About</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                Musafir<span>Café</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="menu.html">Menu</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+            </ul>
+
+            <div class="nav-actions">
+
+                <button class="cart-btn" onclick="openCart()">
+                    Cart <span id="cartCount">0</span>
+                </button>
+
+                <button class="order-btn" onclick="goToMenu()">
+                    Order Now
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-hero">
+
+        <div>
+
+            <p class="welcome">
+                ABOUT US
+            </p>
+
+            <h1>
+                Our Story
+            </h1>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=95"
+                alt="Musafir Café">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="welcome">
+                THE HISTORY OF MUSAFIR CAFÉ
+            </p>
+
+            <h2>
+                More Than Just
+                <br>
+                A Cup Of Coffee
+            </h2>
+
+            <p>
+                Musafir Café was founded in 2026 by two close friends,
+                Pranay and Anmol, who dreamed of creating a cozy place
+                where people could relax, enjoy coffee, and share stories.
+            </p>
+
+            <p>
+                They opened the café in a small old shop and decorated it
+                with wooden furniture, warm lights, books, and photographs
+                from different journeys.
+            </p>
+
+            <p>
+                Soon, Musafir Café became a favorite place for students,
+                travelers, artists, and friends.
+            </p>
+
+            <p>
+                The name "Musafir", meaning "traveler", reflects the idea
+                that everyone is on a journey in life.
+            </p>
+
+            <p>
+                Today, Musafir Café remains a beautiful meeting place
+                where coffee, conversations, memories, and journeys
+                come together.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact">
+
+        <div class="section-heading">
+
+            <p>
+                GET IN TOUCH
+            </p>
+
+            <h2>
+                Visit Our Coffee Shop
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <h3>
+                    Musafir Café
+                </h3>
+
+                <p>
+                    Hiranandani Powai,
+                    Mumbai, India
+                </p>
+
+                <p>
+                    +91 7977315496
+                </p>
+
+                <p>
+                    Pranayshelar098@gmail.com
+                </p>
+
+                <div class="opening-hours">
+
+                    <strong>
+                        Opening Hours
+                    </strong>
+
+                    <br>
+
+                    Monday - Sunday:
+                    8:00 AM - 10:00 PM
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <form
+                action="save_message.php"
+                method="POST"
+                id="contactForm">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required>
+
+                <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    Musafir<span>Café</span>
+                </div>
+
+                <p>
+                    Freshly brewed happiness, one cup at a time.
+                </p>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 Musafir Café Coffee.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
