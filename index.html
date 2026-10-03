@@ -1,271 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Musafir Café - Home</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Musafir Cafe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--br:#4B2E1E;--cr:#FFF8F0;--ca:#C68642;--ol:#6B7A3A;--tx:#2B1B12;--cd:#fff;--ln:#e8d9c8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--cr:#1d130d;--tx:#f4e8da;--cd:#2a1c13;--ln:#47311f;--br:#e9c9a0}}
+:root[data-theme=dark]{--cr:#1d130d;--tx:#f4e8da;--cd:#2a1c13;--ln:#47311f;--br:#e9c9a0}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--cr);color:var(--tx);font:400 15px/1.6 Poppins,system-ui,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--br);margin:.2em 0 .5em;line-height:1.15}
+h1{font-size:clamp(2rem,6vw,3.4rem)}a{color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--cd);border-bottom:1px solid var(--ln);display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding:10px 5vw}
+.logo{font:800 1.4rem 'Playfair Display',serif;color:var(--br);text-decoration:none;margin-right:auto}
+header a:not(.logo){text-decoration:none;font-weight:500}header a:hover{color:var(--ca)}
+.bd{background:var(--ca);color:#fff;border-radius:99px;padding:0 7px;font-size:12px}
+.w{max-width:1100px;margin:0 auto;padding:28px 5vw}
+.hero{background:#4B2E1E;color:#FFF8F0}.hero h1{color:#FFF8F0}
+.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:50px;padding-bottom:50px}
+.tk{background:#FFF8F0;color:#2B1B12;border-radius:14px;padding:20px;transform:rotate(2deg)}
+.tk h3{color:#4B2E1E}.tk .r{display:flex;justify-content:space-between;padding:8px 0;border-top:2px dashed #c9b49c}
+.btn{background:var(--ca);color:#fff;border:0;border-radius:8px;padding:8px 16px;font:500 14px Poppins,sans-serif;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.o{background:none;border:1.5px solid currentColor}.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.chip:focus-visible{outline:3px solid var(--ol);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--cd);border:1px solid var(--ln);border-radius:12px;overflow:hidden}
+.ph{height:120px;display:grid;place-items:center;font-size:52px;position:relative}
+.dot{position:absolute;top:8px;right:8px;width:14px;height:14px;border:2px solid #fff;border-radius:3px;background:#2e9e4f}.dot.nv{background:#c0392b}
+.cb{padding:12px}.cb h3{font-size:1rem;margin:0}.m{margin:2px 0 8px;font-size:12px;opacity:.7}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cat{display:block;text-decoration:none;padding:20px;text-align:center;font-weight:600;background:var(--cd);border:1px solid var(--ln);border-radius:12px}.cat span{display:block;font-size:34px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+input,select,textarea{font:inherit;padding:9px 11px;border:1px solid var(--ln);border-radius:8px;background:var(--cd);color:var(--tx);width:100%}
+.bar input{flex:1;min-width:180px}.bar select{width:auto}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:10px}
+.chip{border:1px solid var(--ln);background:var(--cd);color:var(--tx);border-radius:99px;padding:5px 14px;cursor:pointer;white-space:nowrap;font:inherit}.chip.on{background:var(--br);color:var(--cr)}
+.f{max-width:440px;margin:0 auto;display:grid;gap:12px}.f label{font-weight:500;font-size:13px}
+.err{color:#c0392b;min-height:1.4em;font-size:13px}.ok{color:var(--ol)}
+.tw{overflow-x:auto;border:1px solid var(--ln);border-radius:10px;background:var(--cd)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--ln);vertical-align:top}th{background:rgba(198,134,66,.15)}
+.red td{color:#c0392b;font-weight:600}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}.st div{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px}.st b{display:block;font:800 1.6rem 'Playfair Display',serif;color:var(--br)}
+.pill{padding:2px 10px;border-radius:99px;font-size:12px;background:rgba(107,122,58,.2)}
+.sum{background:var(--cd);border:1px solid var(--ln);border-radius:12px;padding:16px}.sum .row{padding:3px 0}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+footer{background:#4B2E1E;color:#FFF8F0;padding:26px 5vw;font-size:13px;margin-top:30px}footer a{margin-right:14px}
+#t{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ol);color:#fff;padding:9px 18px;border-radius:99px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}#t.s{opacity:1}
+.mas{columns:3 200px;column-gap:12px}button.ph{border:0;width:100%;cursor:pointer;border-radius:12px;margin-bottom:12px;break-inside:avoid;color:inherit}
+@media print{header,footer,.np{display:none!important}body{background:#fff;color:#000}}
+@media(max-width:760px){.hero .w,.two{grid-template-columns:1fr}.tk{transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
-
 <body>
-
-    <!-- ================= NAVBAR ================= -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <a href="index.html" class="logo">
-                Musafir<span>Café</span>
-            </a>
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="menu.html">Menu</a>
-                </li>
-
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-
-            </ul>
-
-            <div class="nav-actions">
-
-                <button class="cart-btn" onclick="openCart()">
-                    Cart <span id="cartCount">0</span>
-                </button>
-
-                <button class="order-btn" onclick="goToMenu()">
-                    Order Now
-                </button>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero">
-
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-
-            <p class="welcome">
-                WELCOME TO MUSAFIR CAFÈ
-            </p>
-
-            <h1>
-                Fresh Coffee.
-                <br>
-                <span>Good Vibes.</span>
-            </h1>
-
-            <p class="hero-text">
-
-                Discover premium coffee, freshly roasted beans
-                and unforgettable flavors in a warm and relaxing
-                atmosphere.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="menu.html" class="primary-btn">
-                    Explore Menu
-                </a>
-
-                <a href="about.html" class="secondary-btn">
-                    Our Story
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= COFFEE CUP ================= -->
-
-        <div class="hero-coffee">
-
-            <div class="steam steam-one"></div>
-            <div class="steam steam-two"></div>
-            <div class="steam steam-three"></div>
-
-            <img
-                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=95"
-                alt="Fresh coffee cup"
-                class="coffee-cup">
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FEATURES ================= -->
-
-    <section class="features">
-
-        <div class="feature">
-
-            <img
-                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=95"
-                alt="Fresh coffee beans">
-
-            <div>
-
-                <h3>
-                    Fresh Beans
-                </h3>
-
-                <p>
-                    Premium coffee beans roasted fresh every day.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <img
-                src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=95"
-                alt="Coffee being prepared">
-
-            <div>
-
-                <h3>
-                    Expertly Brewed
-                </h3>
-
-                <p>
-                    Our baristas craft every cup with passion.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <img
-                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=95"
-                alt="Beautiful coffee shop">
-
-            <div>
-
-                <h3>
-                    Made With Love
-                </h3>
-
-                <p>
-                    A comfortable place where everyone feels at home.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <div>
-
-                <div class="footer-logo">
-                    Musafir<span>Café</span>
-                </div>
-
-                <p>
-                    Freshly brewed happiness, one cup at a time.
-                </p>
-
-            </div>
-
-
-            <div class="social-links">
-
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">YouTube</a>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-
-            © 2026 Musafir Café Coffee.
-            All Rights Reserved.
-
-        </div>
-
-    </footer>
-
-
-    <!-- ================= CART ================= -->
-
-    <div id="cartModal" class="modal">
-
-        <div class="modal-content cart-modal">
-
-            <button class="close-btn" onclick="closeCart()">
-                ×
-            </button>
-
-            <h2>Your Cart</h2>
-
-            <div id="cartItems"></div>
-
-            <div class="cart-total">
-
-                <strong>Total:</strong>
-
-                <span id="cartTotal">
-                    ₹0
-                </span>
-
-            </div>
-
-            <button
-                class="primary-btn full-btn"
-                onclick="goToCheckout()">
-
-                Proceed to Payment
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <script src="script.js"></script>
-
+<header id="nav"></header>
+<main id="app"></main>
+<footer>
+<b>Musafir Cafe</b> · 12 Marine Drive, Mumbai · 8 am to 11 pm daily · hello@musafircafe.com<br><br>
+<a href="#/">Home</a><a href="#/menu">Menu</a><a href="#/offers">Offers</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/contact">Contact</a>
+<br><br>© 2026 Musafir Cafe
+</footer>
+<div id="t" role="status"></div>
+<script src="menu-data.js"></script>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),R=n=>'₹'+n;
+const f=t=>t?new Date(t).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}):'Never';
+const hash=s=>{let h=5381;for(const c of s)h=(h*33^c.charCodeAt(0))>>>0;return h.toString(36)};
+let L={};try{L=JSON.parse(localStorage.getItem('mc'))||{}}catch(e){}
+let D={users:[],orders:[],logs:[],msgs:[],gallery:[],me:null,cart:L.cart||[],theme:L.theme,coupon:L.coupon||'',type:L.type||'delivery'};
+const save=()=>{try{localStorage.setItem('mc',JSON.stringify({cart:D.cart,theme:D.theme,coupon:D.coupon,type:D.type}))}catch(e){}};
+const api=async(u,b)=>(await fetch('/api/'+u,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:{})).json();
+const sync=async()=>Object.assign(D,await api('sync'));
+const to=t=>location.hash==t?go():location.hash=t;
+const toast=m=>{const t=$('#t');t.textContent=m;t.className='s';setTimeout(()=>t.className='',1800)};
+
+
+const me=()=>D.users.find(u=>u.id==D.me);
+function tot(type=D.type){const sub=D.cart.reduce((a,x)=>a+M[x.id].p*x.q,0),c=COUP[D.coupon];const disc=c&&sub>=c[1]?Math.round(sub*c[0]):0;const tax=Math.round((sub-disc)*.05),fee=sub&&type=='delivery'?30:0;return{sub,disc,tax,fee,total:sub-disc+tax+fee}}
+const sumHtml=(t,fee=1)=>`<div class=row><span>Subtotal</span><span>${R(t.sub)}</span></div>${t.disc?`<div class=row><span>Coupon ${esc(D.coupon)}</span><span>-${R(t.disc)}</span></div>`:''}<div class=row><span>GST 5%</span><span>${R(t.tax)}</span></div><div class=row><span>Delivery</span><span>${R(t.fee)}</span></div><div class=row><b>Total</b><b>${R(t.total)}</b></div>`;
+
+function nav(){const u=me(),n=D.cart.reduce((a,x)=>a+x.q,0);$('#nav').innerHTML=`<a class=logo href="#/">🧭 Musafir Cafe</a><a href="#/menu">Menu</a><a href="#/offers">Offers</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/contact">Contact</a><a href="#/cart">Cart <span class=bd>${n}</span></a>`+(u?`<span>Hi, ${esc(u.name.split(' ')[0])}</span>${u.role=='admin'?'<a href="#/admin">Admin</a>':'<a href="#/orders">My orders</a>'}<a href="#/" onclick="logout()">Log out</a>`:'<a href="#/login">Log in</a><a class=btn href="#/register">Sign up</a>')+'<button class=chip onclick="theme()" aria-label="Toggle dark mode">🌓</button>'}
+const card=i=>`<article class=card><div class=ph style="background:linear-gradient(135deg,hsl(${i.h} 50% 28%),hsl(${i.h} 60% 52%))"><span aria-hidden=true>${i.e}</span><img src="images/menu/${i.id}.jpg?v=${PV}" alt="${esc(i.n)}" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><i class="dot ${i.nv?'nv':''}" title="${i.nv?'Non-veg':'Veg'}"></i></div><div class=cb><h3><a href="#/item/${i.id}" style="text-decoration:none">${i.n}</a></h3><p class=m>★ ${i.r}  ${i.c}</p><div class=row><b>${R(i.p)}</b><button class=btn onclick="add(${i.id})">Add</button></div></div></article>`;
+function add(id,n=1){const x=D.cart.find(x=>x.id==id);x?x.q+=n:D.cart.push({id,q:n});save();nav();toast(M[id].n+' added to cart ✓')}
+function qty(id,d){const x=D.cart.find(x=>x.id==id);x.q+=d;if(x.q<1)D.cart=D.cart.filter(y=>y.id!=id);save();go()}
+
+const P={};
+P.home=()=>`<section class=hero><div class=w><div><h1>Every traveller's stop for a perfect cup.</h1><p>Slow coffee, fast snacks and chai poured the way it is on the road. Order for delivery, takeaway or dine-in.</p><a class=btn href="#/menu">Order now</a> <a class="btn o" href="#/offers">See offers</a></div>
+<div class=tk><h3>Today's route</h3>${M.filter(i=>i.b).slice(0,4).map(i=>`<div class=r><span>${i.e} ${i.n}</span><b>${R(i.p)}</b></div>`).join('')}</div></div></section>
+<section class=w><h2>Pick a stop</h2><div class=grid>${C.map(c=>`<a class=cat href="#/menu/${encodeURIComponent(c[0])}"><span>${c[1]}</span>${c[0]}</a>`).join('')}</div></section>
+<section class=w><h2>Bestsellers</h2><div class=grid>${M.filter(i=>i.b).slice(0,8).map(card).join('')}</div></section>`;
+let mq='',mc='All',mv='all';
+P.menu=a=>{if(a)mc=a;return `<section class=w><h1>Menu</h1><p>${M.length} items. Tap Add to build your order.</p><div class=bar><input aria-label="Search menu" placeholder="Search the menu" value="${esc(mq)}" oninput="mq=this.value;grid()"><select aria-label="Diet" onchange="mv=this.value;grid()"><option value=all>All items<option value=v>Veg only<option value=n>Non-veg only</select></div><div class=chips>${['All',...C.map(c=>c[0])].map(c=>`<button class="chip ${c==mc?'on':''}" onclick="mc=this.dataset.c;go()" data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div><div id=g class=grid></div></section>`};
+P.menu.after=()=>{$('section select').value=mv;grid()};
+function grid(){const l=M.filter(i=>(mc=='All'||i.c==mc)&&(mv=='all'||(mv=='n')==i.nv)&&i.n.toLowerCase().includes(mq.toLowerCase()));$('#g').innerHTML=l.length?l.map(card).join(''):'<p>No match. Try a different word or clear the filters.</p>'}
+P.offers=()=>`<section class=w><h1>Offers</h1><div class=grid>${Object.entries(COUP).map(([k,[p,m]])=>`<div class=card><div class=cb><h3>${k}</h3><p>${p*100}% off${m?` on orders above ${R(m)}`:' on any order'}.</p><button class=btn onclick="navigator.clipboard&&navigator.clipboard.writeText('${k}');toast('Code ${k} copied ✓')">Copy code</button></div></div>`).join('')}</div></section>`;
+P.about=()=>`<section class=w><h1>About Musafir</h1><p style="max-width:60ch">Musafir means traveller. We started in 2019 as a one-counter chai stall near a railway bridge, and grew into a cafe for people on their way somewhere. We roast in small batches, bake every morning, and keep the chai honest.</p><a class=btn href="#/menu">See what's brewing</a></section>`;
+P.contact=()=>`<section class=w><h1>Contact</h1><div class=f><label>Name<input id=cn></label><label>Email<input id=ce type=email></label><label>Message<textarea id=cm rows=4></textarea></label><button class=btn onclick="contact()">Send message</button><p class=err id=err></p><p>12 Marine Drive, Mumbai · hello@musafircafe.com</p></div></section>`;
+async function contact(){const r=await api('contact',{n:$('#cn').value.trim(),e:$('#ce').value.trim(),m:$('#cm').value.trim()});if(!r.ok)return $('#err').textContent=r.error;toast('Message sent ✓');location.hash='#/'}
+P.cart=()=>{if(!D.cart.length)return `<section class=w><h1>Your cart</h1><p>Your cart is empty. <a href="#/menu">Pick something from the menu</a>.</p></section>`;
+return `<section class=w><h1>Your cart</h1><div class=two><div>${D.cart.map(x=>{const i=M[x.id];return `<div class="sum row" style="margin-bottom:8px"><span>${i.e} ${i.n}<br><small>${R(i.p)} each</small></span><span><button class=chip onclick="qty(${i.id},-1)" aria-label="Less">−</button> ${x.q} <button class=chip onclick="qty(${i.id},1)" aria-label="More">+</button> <b>${R(i.p*x.q)}</b></span></div>`}).join('')}</div>
+<div class=sum><div class=row><input id=cp placeholder="Coupon code" value="${esc(D.coupon||'')}"><button class=btn onclick="coupon()">Apply</button></div><p class=err id=err></p>${sumHtml(tot())}<br><a class=btn href="#/checkout">Go to checkout</a></div></div></section>`};
+function coupon(){const c=$('#cp').value.trim().toUpperCase(),s=tot().sub;if(!COUP[c])return $('#err').textContent='That code is not valid.';if(s<COUP[c][1])return $('#err').textContent=`${c} needs an order above ${R(COUP[c][1])}.`;D.coupon=c;save();go()}
+P.checkout=()=>{if(!me()){D.next='#/checkout';return P.login()}if(!D.cart.length)return P.cart();return `<section class=w><h1>Checkout</h1><div class=two><div class=f style="max-width:none"><label>Order type<select id=ty onchange="D.type=this.value;sum()"><option value=delivery>Delivery<option value=takeaway>Takeaway<option value=dinein>Dine-in</select></label><label>Phone<input id=ph value="${esc(me().phone)}"></label><label>Delivery address<textarea id=ad rows=2></textarea></label><label>Notes<input id=nt></label>
+<label>Payment method<select id=pm onchange="pay()"><option value=card>Card<option value=upi>UPI<option value=netbanking>Net banking<option value=cod>Cash on delivery</select></label><div id=pd></div><p class=err id=err></p></div><div class=sum><h3>Order summary</h3><div id=sum></div><br><button class=btn onclick="place()">Place order</button></div></div></section>`};
+P.checkout.after=()=>{if(!$('#ty'))return;$('#ty').value=D.type;pay();sum()};
+const sum=()=>$('#sum').innerHTML=sumHtml(tot());
+function pay(){const v=$('#pm').value;$('#pd').innerHTML={card:'<label>Last 4 digits of card<input id=l4 maxlength=4 inputmode=numeric></label><label>Card network<select id=net><option>Visa<option>Mastercard<option>RuPay</select></label><small>Demo only. A real build takes card entry on the payment gateway page and keeps just the last 4 digits.</small>',upi:'<label>UPI ID<input id=upi placeholder="name@bank"></label>',netbanking:'<label>Bank<select id=bk><option>HDFC<option>SBI<option>ICICI<option>Axis</select></label>',cod:'<small>Pay in cash when your order arrives.</small>'}[v]}
+async function place(){const g=i=>($(i)||{}).value||'';
+const r=await api('order',{type:$('#ty').value,phone:$('#ph').value.trim(),addr:$('#ad').value.trim(),note:$('#nt').value.trim(),items:D.cart,coupon:D.coupon,pay:{method:$('#pm').value,last4:g('#l4'),net:g('#net'),upi:g('#upi').trim(),bank:g('#bk')}});
+if(!r.ok)return $('#err').textContent=r.error;D.cart=[];D.coupon='';save();await sync();location.hash='#/success/'+r.id}
+P.success=id=>{const o=D.orders.find(o=>o.id==id);if(!o)return P.nf();return `<section class=w><h1>Order placed ✓</h1><p>Your order number is <b>${o.id}</b>. Payment: ${o.pay.method} (${o.pay.status}). Ready in about 25 minutes.</p><a class=btn href="#/orders">My orders</a> <a class="btn o" href="#/menu">Back to menu</a></section>`};
+const items=o=>o.items.map(i=>`${esc(i.n)} × ${i.q}`).join('<br>');
+P.orders=()=>{const u=me();if(!u){D.next='#/orders';return P.login()}const l=D.orders.filter(o=>o.uid==u.id);return `<section class=w><h1>My orders</h1>${l.length?l.map(o=>`<div class=sum style="margin-bottom:12px"><div class=row><b>${o.id}</b><span class=pill>${o.status}</span></div><p>${items(o)}</p><div class=row><span>${f(o.t)} · ${o.pay.method} ${o.pay.status}</span><b>${R(o.total)}</b></div><p><a href="#/invoice/${o.id}">View invoice</a></p></div>`).join(''):'<p>No orders yet. <a href="#/menu">Start with the menu</a>.</p>'}</section>`};
+
+// Auth
+const dev=()=>{const u=navigator.userAgent;return(/Edg/.test(u)?'Edge':/Chrome/.test(u)?'Chrome':/Firefox/.test(u)?'Firefox':/Safari/.test(u)?'Safari':'Browser')+(/Mobi/.test(u)?' on mobile':' on desktop')};
+P.login=()=>`<section class=w><h1>Log in</h1><div class=f><label>Email<input id=e type=email autocomplete=email></label><label>Password<input id=p type=password autocomplete=current-password></label><p class=err id=err></p><button class=btn onclick="login()">Log in</button><p>New here? <a href="#/register">Create an account</a></p><small>Admin: admin@musafircafe.com (password is ADMIN_PASSWORD in your .env file)</small></div></section>`;
+P.register=()=>`<section class=w><h1>Create account</h1><div class=f><label>Full name<input id=n></label><label>Email<input id=e type=email></label><label>Phone (10 digits)<input id=ph></label><label>Password (6+ characters)<input id=p type=password></label><p class=err id=err></p><button class=btn onclick="register()">Sign up</button><p>Have an account? <a href="#/login">Log in</a></p></div></section>`;
+async function login(){const r=await api('login',{email:$('#e').value.trim(),password:$('#p').value});if(!r.ok)return $('#err').textContent=r.error;await sync();const n=D.next;D.next='';to(me().role=='admin'?'#/admin':n||'#/')}
+async function register(){const r=await api('register',{name:$('#n').value,email:$('#e').value,phone:$('#ph').value,password:$('#p').value});if(!r.ok)return $('#err').textContent=r.error;await sync();const n=D.next;D.next='';to(n||'#/')}
+async function logout(){await api('logout',{});await sync();go()}
+
+// Admin: backend data view
+const th=a=>`<tr>${a.map(x=>`<th>${x}</th>`).join('')}</tr>`;
+async function setStatus(id,v){const r=await api('admin/status',{id,status:v});toast(r.ok?'Status updated ✓':r.error)}
+async function block(id){await api('admin/block',{id});await sync();go()}
+async function refund(id){await api('admin/refund',{id});await sync();go()}
+const jpg=file=>new Promise((ok,no)=>{const img=new Image();img.onload=()=>{const s=Math.min(1,1000/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.85))};img.onerror=no;img.src=URL.createObjectURL(file)});
+async function addG(){const f=$('#gf').files[0];if(!f)return toast('Choose a photo first.');let data;try{data=await jpg(f)}catch(e){return toast('That file is not a picture.')}const r=await api('admin/gallery',{data,caption:$('#gc').value});toast(r.ok?'Added to gallery ✓':r.error);if(r.ok)go()}
+async function delG(id){if(!confirm('Delete this photo?'))return;await api('admin/gallery-delete',{id});go()}
+let PV=Date.now();
+function upload(id,inp){const file=inp.files[0];if(!file)return;const img=new Image();img.onload=async()=>{const s=Math.min(1,800/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);const r=await api('admin/photo',{id,data:c.toDataURL('image/jpeg',.85)});toast(r.ok?'Photo saved ✓':r.error);if(r.ok){PV=Date.now();go()}};img.onerror=()=>toast('That file is not a picture.');img.src=URL.createObjectURL(file)}
+P.admin=tab=>{const u=me();if(!u||u.role!='admin'){D.next='#/admin';return P.login()}tab=tab||'overview';
+const U=D.users.filter(x=>x.role!='admin'),O=D.orders,nm=id=>esc((D.users.find(u=>u.id==id)||{}).name||'Deleted user');
+const tabs=['overview','users','orders','payments','logins','messages','menu','gallery'].map(t=>`<a class="chip ${t==tab?'on':''}" href="#/admin/${t}" style="text-decoration:none">${t[0].toUpperCase()+t.slice(1)}</a>`).join('');
+let b='';
+if(tab=='overview'){const td=O.filter(o=>new Date(o.t).toDateString()==new Date().toDateString()).length,rev=O.filter(o=>o.status!='Cancelled'&&o.pay.status!='refunded').reduce((a,o)=>a+o.total,0);
+b=`<div class=st><div><b>${U.length}</b>Customers</div><div><b>${O.length}</b>Orders</div><div><b>${td}</b>Orders today</div><div><b>${R(rev)}</b>Revenue</div><div><b>${O.filter(o=>o.status=='Placed').length}</b>Waiting to start</div></div>`}
+if(tab=='users')b=`<div class=tw><table>${th(['Name','Email','Phone','Joined','Last login','Orders','Spent','Status',''])}${U.map(x=>{const os=O.filter(o=>o.uid==x.id);return `<tr><td>${esc(x.name)}</td><td>${esc(x.email)}</td><td>${esc(x.phone)}</td><td>${f(x.joined)}</td><td>${f(x.last)}</td><td>${os.length}</td><td>${R(os.reduce((a,o)=>a+o.total,0))}</td><td>${x.off?'Blocked':'Active'}</td><td><button class=chip onclick="block(${x.id})">${x.off?'Unblock':'Block'}</button></td></tr>`}).join('')||'<tr><td colspan=9>No customers yet. Sign up from the Sign up button to see one here.</td></tr>'}</table></div><p><small>Passwords are never shown. They are stored only as a hash.</small></p>`;
+if(tab=='orders')b=`<div class=tw><table>${th(['Order','Customer','Items ordered','Type / address','Total','Payment','Status'])}${O.map(o=>`<tr><td>${o.id}<br><small>${f(o.t)}</small><br><a href="#/invoice/${o.id}">Invoice</a></td><td>${nm(o.uid)}<br><small>${esc(o.phone)}</small></td><td>${items(o)}</td><td>${o.type}<br><small>${esc(o.addr)}</small></td><td>${R(o.total)}</td><td>${o.pay.method} · ${o.pay.status}</td><td><select onchange="setStatus('${o.id}',this.value)">${['Placed','Preparing','Out for delivery','Delivered','Cancelled'].map(s=>`<option ${s==o.status?'selected':''}>${s}`).join('')}</select></td></tr>`).join('')||'<tr><td colspan=7>No orders yet.</td></tr>'}</table></div>`;
+if(tab=='payments')b=`<div class=tw><table>${th(['Order','Customer','Method','Details','Amount','Status','Transaction ID',''])}${O.map(o=>`<tr><td>${o.id}</td><td>${nm(o.uid)}</td><td>${o.pay.method}</td><td>${esc(o.pay.detail||'-')}</td><td>${R(o.total)}</td><td>${o.pay.status}</td><td>${o.pay.txn}</td><td>${o.pay.status=='paid'?`<button class=chip onclick="refund('${o.id}')">Mark refunded</button>`:''}</td></tr>`).join('')||'<tr><td colspan=8>No payments yet.</td></tr>'}</table></div><p><small>Full card numbers, CVV and PINs are never collected or stored.</small></p>`;
+if(tab=='logins')b=`<div class=tw><table>${th(['Time','Email','Result','Device','IP address'])}${D.logs.map(l=>`<tr class="${l.ok?'':'red'}"><td>${f(l.t)}</td><td>${esc(l.email)}</td><td>${l.ok?'Success':'Failed'}</td><td>${esc(l.dev)}</td><td>${esc(l.ip)}</td></tr>`).join('')||'<tr><td colspan=4>No login attempts yet.</td></tr>'}</table></div>`;
+if(tab=='gallery')b=`<div class=f style="max-width:none;margin-bottom:16px"><label>Photo<input id=gf type=file accept="image/*"></label><label>Caption (optional)<input id=gc maxlength=80></label><button class=btn onclick="addG()">Add to gallery</button></div><div class=grid>${D.gallery.map(g=>`<div class=card><img src="images/gallery/${g.id}.jpg" alt="${esc(g.caption)}" style="width:100%;display:block"><div class=cb><p class=m>${esc(g.caption||'No caption')}</p><button class=chip onclick="delG(${g.id})">Delete</button></div></div>`).join('')||'<p>No photos yet.</p>'}</div>`;
+if(tab=='menu')b=`<p>Pick a photo for any item. It is resized and saved automatically.</p><div class=grid>${M.map(i=>`<div class=card><div class=ph style="height:90px;background:${bg(i.h)}"><span>${i.e}</span><img src="images/menu/${i.id}.jpg?v=${PV}" alt="" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><div class=cb><h3>${i.n}</h3><input type=file accept="image/*" aria-label="Photo for ${esc(i.n)}" style="font-size:12px;padding:4px" onchange="upload(${i.id},this)"></div></div>`).join('')}</div>`;
+if(tab=='messages')b=`<div class=tw><table>${th(['Time','Name','Email','Message'])}${D.msgs.map(m=>`<tr><td>${f(m.t)}</td><td>${esc(m.n)}</td><td>${esc(m.e)}</td><td>${esc(m.m)}</td></tr>`).join('')||'<tr><td colspan=4>No messages yet.</td></tr>'}</table></div>`;
+return `<section class=w><h1>Admin</h1><div class=tabs>${tabs}</div>${b}</section>`};
+const dk=()=>D.theme?D.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+const applyTheme=()=>{if(D.theme)document.documentElement.dataset.theme=D.theme};
+function theme(){D.theme=dk()?'light':'dark';applyTheme();save()}
+const bg=h=>`linear-gradient(135deg,hsl(${h} 50% 28%),hsl(${h} 60% 52%))`;
+const DS={'Hot Coffee':['Pulled from our house roast and finished the way you ask for it.','coffee, water, milk'],'Cold Coffee & Shakes':['Chilled, blended and served over ice.','coffee or fruit, milk, ice, sugar'],'Tea':['Brewed fresh in small pots all day.','tea leaves, water, spices'],'Breakfast':['A proper start to the day, made to order.','flour, eggs or potato, butter, spices'],'Sandwiches & Burgers':['Toasted or grilled and packed with filling.','bread, cheese, vegetables or chicken, sauces'],'Pizza & Pasta':['Baked or tossed fresh in the kitchen.','dough or pasta, cheese, sauce, herbs'],'Snacks':['Hot, crisp and good for sharing.','potato or flour, oil, spices, dips'],'Desserts':['Baked in the morning, plated to order.','flour, sugar, cream, chocolate or fruit'],'Combos':['Bundled meals that cost less than ordering one by one.','mains, sides and drinks']};
+let iq=1;
+const iqs=d=>{iq=Math.max(1,iq+d);$('#iq').textContent=iq};
+P.item=a=>{const i=M[+a];if(!i)return P.nf();iq=1;const[d,ing]=DS[i.c];return `<section class=w><p><a href="#/menu">Back to menu</a></p><div class=two><div class=ph style="height:320px;border-radius:14px;font-size:120px;background:${bg(i.h)}"><span aria-hidden=true>${i.e}</span><img src="images/menu/${i.id}.jpg?v=${PV}" alt="${esc(i.n)}" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><div><h1>${i.n}</h1><p>★ ${i.r}  ${i.nv?'Non-veg':'Veg'}  about ${120+i.id*37%400} kcal</p><p>${d}</p><p><b>Made with:</b> ${ing}</p><h2>${R(i.p)}</h2><div class=row style="justify-content:flex-start"><button class=chip onclick="iqs(-1)" aria-label="Less">−</button><b id=iq>1</b><button class=chip onclick="iqs(1)" aria-label="More">+</button><button class=btn onclick="add(${i.id},iq)">Add to cart</button></div></div></div><h2>You may also like</h2><div class=grid>${M.filter(x=>x.c==i.c&&x.id!=i.id).slice(0,4).map(card).join('')}</div></section>`};
+P.invoice=id=>{const u=me(),o=D.orders.find(o=>o.id==id);if(!u){D.next='#/invoice/'+id;return P.login()}if(!o||(o.uid!=u.id&&u.role!='admin'))return P.nf();const c=D.users.find(x=>x.id==o.uid)||{};
+return `<section class=w><div class=sum style="max-width:640px;margin:0 auto"><h2>Musafir Cafe</h2><p>12 Marine Drive, Mumbai · hello@musafircafe.com</p><div class=row><b>Invoice ${o.id}</b><span>${f(o.t)}</span></div><p>Billed to: ${esc(c.name||'Customer')} · ${esc(o.phone)}<br>Order type: ${o.type}${o.addr?' · '+esc(o.addr):''}</p><div class=tw><table>${th(['Item','Qty','Price','Amount'])}${o.items.map(i=>`<tr><td>${esc(i.n)}</td><td>${i.q}</td><td>${R(i.p)}</td><td>${R(i.p*i.q)}</td></tr>`).join('')}</table></div><br>${sumHtml(o)}<p>Payment: ${o.pay.method}${o.pay.detail?' ('+esc(o.pay.detail)+')':''}, ${o.pay.status}. Transaction ID: ${o.pay.txn}</p><p class=np><button class=btn onclick="print()">Print invoice</button> <a href="#/orders">Back to orders</a></p></div></section>`};
+P.gallery=()=>`<section class=w><h1>Gallery</h1><p>Tap a photo to see it larger.</p><div class=mas>${D.gallery.length?D.gallery.map(g=>`<button class=ph style="background:#4B2E1E;padding:0" onclick="lb(${g.id},1)" aria-label="Open ${esc(g.caption||'photo')}"><img src="images/gallery/${g.id}.jpg" alt="${esc(g.caption)}" style="width:100%;display:block;border-radius:12px"></button>`).join(''):M.filter(i=>i.id%3==0).map(i=>`<button class=ph style="height:${120+i.id*53%110}px;background:${bg(i.h)};font-size:48px" onclick="lb(${i.id})" aria-label="Open ${esc(i.n)}">${i.e}</button>`).join('')}</div></section>`;
+function lb(id,photo){const g=photo&&D.gallery.find(x=>x.id==id),i=M[id],d=document.createElement('div');d.id='lb';d.setAttribute('role','dialog');d.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.8);display:grid;place-items:center;z-index:20;padding:20px';d.onclick=()=>d.remove();d.innerHTML=photo?`<div style="text-align:center;color:#fff"><img src="images/gallery/${id}.jpg" alt="${esc(g&&g.caption)}" style="max-width:90vw;max-height:75vh;border-radius:14px"><p>${esc(g&&g.caption)} Click anywhere to close.</p></div>`:`<div style="text-align:center;color:#fff"><div class=ph style="width:min(80vw,420px);height:min(60vh,360px);font-size:140px;border-radius:14px;background:${bg(i.h)}">${i.e}</div><p>${i.n}. Click anywhere to close.</p></div>`;document.body.append(d)}
+addEventListener('keydown',e=>{const l=$('#lb');if(e.key=='Escape'&&l)l.remove()});
+P.nf=()=>`<section class=w><h1>Wrong turn</h1><p>We could not find that page. <a href="#/">Head back home</a>.</p></section>`;
+
+async function go(){const[,p='home',a='']=(location.hash||'#/').slice(1).split('/'),fn=P[p||'home']||P.nf;if(['admin','orders','invoice','checkout','gallery'].includes(p))await sync();$('#app').innerHTML=fn(decodeURIComponent(a));nav();fn.after&&fn.after();scrollTo(0,0)}
+applyTheme();addEventListener('hashchange',go);sync().then(go);
+</script>
 </body>
-
 </html>
